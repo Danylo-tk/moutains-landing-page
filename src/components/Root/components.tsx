@@ -1,13 +1,8 @@
 import styled from "styled-components";
 import palette from "../../styles/palette";
 
-interface Props {
-  positionY: number;
-}
-
 const Wrapper = styled.div`
   width: 100%;
-  height: 400rem;
   z-index: -999;
   position: absolute;
   background-color: ${palette.firefly};
@@ -49,9 +44,24 @@ const SecondBG = styled(BGimg)`
   z-index: -18;
 `;
 
-const ThirdBG = styled(BGimg)<Props>`
-  top: ${(p) => -Math.abs(p.positionY / 65) + 65}vh;
+const ThirdBG = styled(BGimg)`
   z-index: -17;
 `;
 
-export { Wrapper, UpperOverlayBG, LowerOverlayBG, FirstBG, SecondBG, ThirdBG };
+const ContentContainer = styled.div`
+  gap: 15rem;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+export {
+  Wrapper,
+  UpperOverlayBG,
+  LowerOverlayBG,
+  FirstBG,
+  SecondBG,
+  ThirdBG,
+  ContentContainer,
+};
